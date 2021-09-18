@@ -8,7 +8,6 @@ const XBox: React.FC = () => {
       <a
         href="https://xbox.com/en-US/consoles/xbox-series-x"
         target="_blank"
-        className="btn"
         rel="noreferrer"
       >
         Buy Now

@@ -5,6 +5,8 @@
   --right-bg-image: url('http://localhost:5000/images/xbox.jpg');
   --left-bg-color: rgba(87, 84, 236, 0.7);
   --right-bg-color: rgba(43, 43, 43, 0.8);
+  --left-btn-hover-color: rgba(87, 84, 236, 1);
+  --right-btn-hover-color: rgba(28, 122, 28, 1);
   --white-color: #fff;
   --grey-color: #333;
 }
@@ -28,6 +30,11 @@
   left: $left;
   top: $top;
   transform: translateX(-50%);
+}
+
+@mixin hover-btn($bg-color) {
+  background-color: $bg-color;
+  transition: background-color 0.5s ease;
 }
 
 * {
@@ -58,7 +65,13 @@ body {
     left: 0;
 
     &::before {
-      @include before-elem(var(--left-bg-color))
+      @include before-elem(var(--left-bg-color));
+    }
+
+    a {
+      &:hover {
+        @include hover-btn(var(--left-btn-hover-color));
+      }
     }
   }
   
@@ -67,7 +80,13 @@ body {
     right: 0;
     
     &::before {
-      @include before-elem(var(--right-bg-color))
+      @include before-elem(var(--right-bg-color));
+    }
+
+    a {
+      &:hover {
+        @include hover-btn(var(--right-btn-hover-color));
+      }
     }
   }
 
@@ -78,8 +97,17 @@ body {
     white-space: nowrap;
   }
 
-  .btn {
+  a {
     @include text(50%, 40%);
+    display: flex;
+    justify-content: center;
     text-decoration: none;
+    color: var(--white-color);
+    border: var(--white-color) solid 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 15rem;
+    padding: 1.5rem;
+    text-transform: uppercase;
   }
 }

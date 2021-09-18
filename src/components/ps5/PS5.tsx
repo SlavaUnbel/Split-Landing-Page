@@ -8,7 +8,6 @@ const PS5: React.FC = () => {
       <a
         href="https://playstation.com/en-us/ps5"
         target="_blank"
-        className="btn"
         rel="noreferrer"
       >
         Buy Now
