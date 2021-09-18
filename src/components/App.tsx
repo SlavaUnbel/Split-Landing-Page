@@ -1,27 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useHoverEffect } from './appHook/AppHook';
 import PS5 from './ps5/PS5';
 import XBox from './xbox/XBox';
 
 const App: React.FC = () => {
-  const [container, setContainer] = useState<Element | null>(null);
-
-  useEffect(() => setContainer(document.querySelector('.container')), []);
-
-  const enterLeft = () => {
-    if (container) container.classList.add('hover-left');
-  };
-
-  const enterRight = () => {
-    if (container) container.classList.add('hover-right');
-  };
-
-  const leaveLeft = () => {
-    if (container) container.classList.remove('hover-left');
-  };
-
-  const leaveRight = () => {
-    if (container) container.classList.remove('hover-right');
-  };
+  const { enterLeft, enterRight, leaveLeft, leaveRight } = useHoverEffect();
 
   return (
     <div className="container">
