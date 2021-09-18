@@ -140,3 +140,33 @@ body {
 .split.right::before {
   transition: all 1s ease-in-out;
 }
+
+@media(max-width: 50rem) {
+  .container {
+    h1 {
+      font-size: 2rem;
+      top: 30%;
+    }
+  
+    a {
+      padding: 1.2rem;
+      width: 12rem;
+    }
+  }
+}
+
+@media(max-width: 40rem) {
+  .container {
+    h1 {
+      font-size: 1.5rem;
+      top: 40%;
+    }
+  
+    a {
+      padding: 1rem;
+      width: 8rem;
+      font-size: 0.8rem;
+      top: 50%;
+    }
+  }
+}
