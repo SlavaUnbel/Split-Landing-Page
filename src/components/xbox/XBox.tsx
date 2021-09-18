@@ -1,8 +1,17 @@
 import React from 'react';
 
-const XBox: React.FC = () => {
+interface Props {
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+}
+
+const XBox: React.FC<Props> = ({ onMouseEnter, onMouseLeave }) => {
   return (
-    <div className="split right">
+    <div
+      className="split right"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <h1>XBox Series X</h1>
 
       <a

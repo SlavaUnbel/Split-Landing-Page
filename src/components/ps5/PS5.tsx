@@ -1,8 +1,17 @@
 import React from 'react';
 
-const PS5: React.FC = () => {
+interface Props {
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+}
+
+const PS5: React.FC<Props> = ({ onMouseEnter, onMouseLeave }) => {
   return (
-    <div className="split left">
+    <div
+      className="split left"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <h1>Playstation 5</h1>
 
       <a
