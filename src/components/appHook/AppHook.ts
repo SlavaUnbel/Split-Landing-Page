@@ -1,25 +1,18 @@
-import { useEffect, useState } from 'react';
+import { createRef, LegacyRef } from 'react';
 
 export const useHoverEffect = () => {
-  const [container, setContainer] = useState<Element | null>(null);
+  const ref: LegacyRef<HTMLDivElement> = createRef();
 
-  useEffect(() => setContainer(document.querySelector('.container')), []);
+  const enterLeft = () =>
+    ref.current?.classList.add('hover-left');
 
-  const enterLeft = () => {
-    if (container) container.classList.add('hover-left');
-  };
+  const enterRight = () =>
+    ref.current?.classList.add('hover-right');
 
-  const enterRight = () => {
-    if (container) container.classList.add('hover-right');
-  };
+  const leaveLeft = () => ref.current?.classList.remove('hover-right');
 
-  const leaveLeft = () => {
-    if (container) container.classList.remove('hover-left');
-  };
+  const leaveRight = () =>
+    ref.current?.classList.remove('hover-right');
 
-  const leaveRight = () => {
-    if (container) container.classList.remove('hover-right');
-  };
-
-  return { enterLeft, enterRight, leaveLeft, leaveRight }
+  return { ref, enterLeft, enterRight, leaveLeft, leaveRight }
 }

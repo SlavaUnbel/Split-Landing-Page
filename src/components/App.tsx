@@ -4,10 +4,11 @@ import PS5 from './ps5/PS5';
 import XBox from './xbox/XBox';
 
 const App: React.FC = () => {
-  const { enterLeft, enterRight, leaveLeft, leaveRight } = useHoverEffect();
+  const { ref, enterLeft, enterRight, leaveLeft, leaveRight } =
+    useHoverEffect();
 
   return (
-    <div className="container">
+    <div className="container" ref={ref}>
       <PS5 onMouseEnter={enterLeft} onMouseLeave={leaveLeft} />
 
       <XBox onMouseEnter={enterRight} onMouseLeave={leaveRight} />
