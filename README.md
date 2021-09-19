@@ -1,5 +1,5 @@
 # Split-Landing-Page
-Training project #7
+Training project #6
 
 There are four steps to configure this app.
 
